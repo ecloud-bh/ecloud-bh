@@ -8,7 +8,7 @@ def create_readme(name, email, linkedin):
     :return: README content as a string
     """
     content = f"""
-# Hello, I'm {name}! 👋
+# Hello, I'm Muhammet P.! 👋
 
 Welcome! You've stepped into my virtual workspace where you can discover my passion for technology.
 
@@ -23,8 +23,8 @@ I am a developer specialized in Python, PHP, and JavaScript. I love exploring te
 ## 💬 Contact
 Feel free to reach out to me! I always enjoy discussing new ideas and projects.
 
-- 📧 Email: {email}
-- 🔗 LinkedIn: {linkedin}
+- 📧 Email: mpolat@e-cloud.web.tr
+- 🔗 LinkedIn: https://www.linkedin.com/in/muhammetpolat
 """
     return content
 
