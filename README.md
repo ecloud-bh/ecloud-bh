@@ -29,7 +29,7 @@ Feel free to reach out to me! I always enjoy discussing new ideas and projects.
     return content
 
 
-my_readme = create_readme("Your Name", "mpolat@e-cloud.web.tr", "https://www.linkedin.com/in/muhammetpolat")
+my_readme = create_readme("Muhammet P.", "mpolat@e-cloud.web.tr", "https://www.linkedin.com/in/muhammetpolat")
 
 
 print(my_readme)
