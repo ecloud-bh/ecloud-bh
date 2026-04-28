@@ -65,24 +65,28 @@ risk in model weights and tokenizer artefacts.
 
 ### AIGENCY programme — sovereign LLM timeline
 
+Programme founded **2021**. Türkiye's longest-running fully sovereign
+LLM line.
+
 | Year | Release | Milestone |
 |---|---|---|
-| 2024 | AIGENCY V2 | First fully sovereign Turkish LLM release |
-| 2025 | AIGENCY V3 | Architecture maturity, Turkish morphology calibration, 200K+ context |
+| 2021 | Programme founded | Sovereign-AI research charter; Turkish-first tokenizer studies; data residency roadmap |
+| 2022 | Foundational research | Sovereign training infrastructure; Turkish morphology calibration; first internal LLM prototypes |
+| 2023 | AIGENCY V1 | First fully sovereign Turkish LLM milestone (early-access cohort) |
+| 2024 | AIGENCY V2 | First public sovereign release; Turkish-NLP baseline established |
+| 2025 | AIGENCY V3 | Architecture maturity, 200K+ context, hierarchical memory primitives |
 | 2026 | **AIGENCY V4** | Multimodal, 128B parameters, frontier-adjacent, transparent evaluation |
 | 2026 Q4 | AIGENCY V4.1 | Vision encoder 8B → 16B, GPQA-D 0.55 target, latency p50 ≤ 4 s |
-
-Türkiye's longest-running fully sovereign LLM programme.
 
 ---
 
 ### Selected public artefacts
 
-| Artefact | Description | Lisence |
+| Artefact | Description | Licence |
 |---|---|---|
 | [`aigency-v4-whitepaper`](https://github.com/ecloud-bh/aigency-v4-whitepaper) | 32-page technical whitepaper (EN + TR) | CC BY-ND 4.0 |
 | [`aigency-benchmarks`](https://github.com/ecloud-bh/aigency-benchmarks) | Reproducibility capsule — 22 benchmarks, 13,344 raw responses, scoring code | MIT |
-| [`aigencydev/AIGENCY-V4`](https://huggingface.co/aigencydev/AIGENCY-V4) | Hugging Face model card + methodology | Open methodology |
+| [`aigencydev/AIGENCY-V4`](https://huggingface.co/aigencydev/AIGENCY-V4) | Hugging Face model card and methodology | Open methodology |
 | [`aigencydev/aigency-v4-evaluation`](https://huggingface.co/datasets/aigencydev/aigency-v4-evaluation) | Evaluation dataset (raw + scored) | MIT |
 | [`aigencydev/AIGENCY-V4-Demo`](https://huggingface.co/spaces/aigencydev/AIGENCY-V4-Demo) | Live Gradio demo (production API proxy) | Open |
 
@@ -90,15 +94,48 @@ Türkiye's longest-running fully sovereign LLM programme.
 
 ### Stack
 
-**Languages.** &nbsp; `Python` &nbsp;·&nbsp; `Rust` &nbsp;·&nbsp; `Go` &nbsp;·&nbsp; `TypeScript` &nbsp;·&nbsp; `C++` &nbsp;·&nbsp; `Solidity`
+**Languages.** &nbsp; `Python` &nbsp;·&nbsp; `Rust` &nbsp;·&nbsp; `Go` &nbsp;·&nbsp; `C++` &nbsp;·&nbsp; `TypeScript` &nbsp;·&nbsp; `Solidity` &nbsp;·&nbsp; `Move` &nbsp;·&nbsp; `Vyper` &nbsp;·&nbsp; `Bash` &nbsp;·&nbsp; `SQL`
 
-**ML and serving.** &nbsp; `PyTorch` &nbsp;·&nbsp; `Triton` &nbsp;·&nbsp; `CUDA` &nbsp;·&nbsp; `vLLM` &nbsp;·&nbsp; `Hugging Face` &nbsp;·&nbsp; `bitsandbytes` &nbsp;·&nbsp; `Flash-Attention`
+#### Artificial intelligence
 
-**Web and platform.** &nbsp; `FastAPI` &nbsp;·&nbsp; `gRPC` &nbsp;·&nbsp; `Next.js` &nbsp;·&nbsp; `Postgres` &nbsp;·&nbsp; `Redis` &nbsp;·&nbsp; `Kafka` &nbsp;·&nbsp; `ClickHouse`
+| Layer | Stack |
+|---|---|
+| Training | `PyTorch` &nbsp;·&nbsp; `JAX` &nbsp;·&nbsp; `DeepSpeed` &nbsp;·&nbsp; `FSDP` &nbsp;·&nbsp; `Megatron-LM` &nbsp;·&nbsp; `accelerate` |
+| Inference kernels | `Triton` &nbsp;·&nbsp; `CUDA` &nbsp;·&nbsp; `Flash-Attention 2/3` &nbsp;·&nbsp; `xFormers` &nbsp;·&nbsp; `bitsandbytes` &nbsp;·&nbsp; `AWQ` &nbsp;·&nbsp; `GPTQ` |
+| Serving | `vLLM` &nbsp;·&nbsp; `TensorRT-LLM` &nbsp;·&nbsp; `TGI` &nbsp;·&nbsp; `llama.cpp` &nbsp;·&nbsp; `Ollama` &nbsp;·&nbsp; `BentoML` |
+| Eval and observability | `lm-evaluation-harness` &nbsp;·&nbsp; `lighteval` &nbsp;·&nbsp; `Weights & Biases` &nbsp;·&nbsp; `MLflow` &nbsp;·&nbsp; `Phoenix` &nbsp;·&nbsp; `Langfuse` |
+| RAG and vectors | `Qdrant` &nbsp;·&nbsp; `Weaviate` &nbsp;·&nbsp; `Milvus` &nbsp;·&nbsp; `pgvector` &nbsp;·&nbsp; `FAISS` &nbsp;·&nbsp; `LangChain` &nbsp;·&nbsp; `LlamaIndex` |
+| Multimodal | `CLIP / SigLIP` &nbsp;·&nbsp; `Whisper` &nbsp;·&nbsp; `SAM 2` &nbsp;·&nbsp; `Florence-2` &nbsp;·&nbsp; vision encoders &nbsp;·&nbsp; cross-modal projection |
+| Agents and tools | `MCP` (Model Context Protocol) &nbsp;·&nbsp; `AIGENCY` SDKs &nbsp;·&nbsp; tool-use schemas &nbsp;·&nbsp; structured output |
 
-**Infra and security.** &nbsp; `Kubernetes` &nbsp;·&nbsp; `Terraform` &nbsp;·&nbsp; `Vault` &nbsp;·&nbsp; `GPG` &nbsp;·&nbsp; `Sigstore` &nbsp;·&nbsp; `Grafana` &nbsp;·&nbsp; `Prometheus`
+#### Blockchain and on-chain systems
 
-**Blockchain.** &nbsp; `EVM` &nbsp;·&nbsp; `Hardhat` &nbsp;·&nbsp; `Foundry` &nbsp;·&nbsp; `viem` &nbsp;·&nbsp; on-chain attestations &nbsp;·&nbsp; zero-knowledge proofs
+| Layer | Stack |
+|---|---|
+| Smart-contract development | `Foundry` &nbsp;·&nbsp; `Hardhat` &nbsp;·&nbsp; `viem` &nbsp;·&nbsp; `ethers.js` &nbsp;·&nbsp; `web3.py` |
+| EVM and L2s | `Ethereum` &nbsp;·&nbsp; `Optimism` &nbsp;·&nbsp; `Arbitrum` &nbsp;·&nbsp; `Base` &nbsp;·&nbsp; `zkSync` &nbsp;·&nbsp; `Scroll` &nbsp;·&nbsp; `Linea` &nbsp;·&nbsp; `Polygon zkEVM` |
+| Non-EVM | `Solana` (Anchor, Rust) &nbsp;·&nbsp; `Cosmos SDK` &nbsp;·&nbsp; `Sui` &nbsp;·&nbsp; `Aptos` |
+| Zero-knowledge | `Circom` &nbsp;·&nbsp; `Noir` &nbsp;·&nbsp; `Halo2` &nbsp;·&nbsp; `Plonky3` &nbsp;·&nbsp; `RISC Zero` &nbsp;·&nbsp; `SP1` &nbsp;·&nbsp; `snarkjs` |
+| Standards | `ERC-20` &nbsp;·&nbsp; `ERC-721` &nbsp;·&nbsp; `ERC-1155` &nbsp;·&nbsp; `ERC-4337` (account abstraction) &nbsp;·&nbsp; `EIP-712` &nbsp;·&nbsp; `ERC-6551` |
+| Audit and analytics | `Slither` &nbsp;·&nbsp; `Mythril` &nbsp;·&nbsp; `Echidna` &nbsp;·&nbsp; Foundry invariants &nbsp;·&nbsp; `The Graph` &nbsp;·&nbsp; `Dune` &nbsp;·&nbsp; `Tenderly` |
+| Verifiable AI | content-addressed checkpoints &nbsp;·&nbsp; on-chain attestation registries &nbsp;·&nbsp; restaking primitives (`EigenLayer`) |
+
+#### Cybersecurity and compliance
+
+| Layer | Stack |
+|---|---|
+| Static and dynamic analysis | `Semgrep` &nbsp;·&nbsp; `CodeQL` &nbsp;·&nbsp; `Bandit` &nbsp;·&nbsp; `Burp Suite` &nbsp;·&nbsp; `OWASP ZAP` &nbsp;·&nbsp; `nuclei` |
+| Network and offensive | `nmap` &nbsp;·&nbsp; `Wireshark` &nbsp;·&nbsp; `Metasploit` &nbsp;·&nbsp; `Hydra` &nbsp;·&nbsp; `BloodHound` |
+| Supply-chain integrity | `Sigstore` (cosign, rekor) &nbsp;·&nbsp; `SLSA` &nbsp;·&nbsp; `in-toto` &nbsp;·&nbsp; `Syft` &nbsp;·&nbsp; `Grype` &nbsp;·&nbsp; `Trivy` &nbsp;·&nbsp; `GPG` &nbsp;·&nbsp; `age` |
+| Cloud and runtime | `Falco` &nbsp;·&nbsp; `OPA / Gatekeeper` &nbsp;·&nbsp; `Kyverno` &nbsp;·&nbsp; AWS Security Hub &nbsp;·&nbsp; GCP SCC &nbsp;·&nbsp; Azure Defender |
+| SIEM and detection | `Elastic SIEM` &nbsp;·&nbsp; `Wazuh` &nbsp;·&nbsp; `Splunk` &nbsp;·&nbsp; `Suricata` &nbsp;·&nbsp; `Zeek` |
+| Identity and secrets | `HashiCorp Vault` &nbsp;·&nbsp; `OAuth 2.1` &nbsp;·&nbsp; `OIDC` &nbsp;·&nbsp; `SAML` &nbsp;·&nbsp; `mTLS` &nbsp;·&nbsp; `WebAuthn` |
+| AI-specific security | prompt-injection threat models &nbsp;·&nbsp; data-exfiltration controls &nbsp;·&nbsp; tokenizer / weight supply-chain &nbsp;·&nbsp; jailbreak red-teaming |
+| Compliance frameworks | `KVKK` &nbsp;·&nbsp; `EU AI Act` &nbsp;·&nbsp; `GDPR` &nbsp;·&nbsp; `ISO 27001` &nbsp;·&nbsp; `SOC 2 Type II` &nbsp;·&nbsp; `NIST CSF 2.0` &nbsp;·&nbsp; `PCI DSS` |
+
+#### Platform and infrastructure
+
+`Kubernetes` &nbsp;·&nbsp; `Terraform` &nbsp;·&nbsp; `Pulumi` &nbsp;·&nbsp; `Ansible` &nbsp;·&nbsp; `Helm` &nbsp;·&nbsp; `Argo CD` &nbsp;·&nbsp; `FastAPI` &nbsp;·&nbsp; `gRPC` &nbsp;·&nbsp; `Next.js` &nbsp;·&nbsp; `Postgres` &nbsp;·&nbsp; `ClickHouse` &nbsp;·&nbsp; `Redis` &nbsp;·&nbsp; `Kafka` &nbsp;·&nbsp; `NATS` &nbsp;·&nbsp; `Grafana` &nbsp;·&nbsp; `Prometheus` &nbsp;·&nbsp; `OpenTelemetry`
 
 ---
 
@@ -109,13 +146,17 @@ If you reference AIGENCY V4 in academic or technical work:
 ```bibtex
 @techreport{aigency-v4-2026,
   title       = {AIGENCY V4: Sovereign, Fully Independent and Multimodal 128B-Parameter AI Architecture},
-  author      = {{eCloud Yaz{\i}l{\i}m Teknolojileri}},
+  author      = {{eCloud Yazılım Teknolojileri}},
   year        = {2026},
   month       = apr,
-  institution = {eCloud Yaz{\i}l{\i}m Teknolojileri},
+  institution = {eCloud Yazılım Teknolojileri},
   url         = {https://github.com/ecloud-bh/aigency-v4-whitepaper}
 }
 ```
+
+(Use a UTF-8 BibTeX backend — `biber` + `biblatex` — for correct
+rendering of Turkish characters. For legacy `bibtex`, replace
+`Yazılım` with `Yaz\i l\i m`.)
 
 ---
 
